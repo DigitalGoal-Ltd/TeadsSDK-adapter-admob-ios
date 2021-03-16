@@ -13,8 +13,8 @@ import GoogleMobileAds
 /// Class adapting Teads banner to work with Google Mobile Ads mediation.
 @objc public class GADMAdapterTeadsBanner: NSObject, GADCustomEventBanner {
     
-    var adSettings: TeadsAdSettings?
-    
+    public static var adMobAdSettings: TeadsAdSettings?
+
     // MARK: - Members
     private var currentBanner: TFACustomAdView?
     
@@ -39,6 +39,7 @@ import GoogleMobileAds
         }
         
         // Prepare ad settings
+        var adSettings: TeadsAdSettings?
         if let teadsAdSettings = GADMAdapterTeadsBanner.adMobAdSettings {
             adSettings = teadsAdSettings
         } else {
